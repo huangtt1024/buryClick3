@@ -1,0 +1,83 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+    //id 'maven-publish'
+    /*发布到github*/
+    // id 'com.github.dcendents.android-maven'
+}
+
+group = 'com.hi.data'
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    compileOnly("com.android.tools.build:gradle-api:${rootProject.ext.agpVersion}")
+    compileOnly("com.android.tools.build:gradle:${rootProject.ext.agpVersion}")
+    implementation 'org.ow2.asm:asm:9.1'
+    implementation 'org.ow2.asm:asm-commons:9.1'
+    implementation 'org.ow2.asm:asm-analysis:9.1'
+    implementation 'org.ow2.asm:asm-util:9.1'
+    implementation 'org.ow2.asm:asm-tree:9.1'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'com.google.code.gson:gson:2.10'
+}
+
+
+
+/*发布到本地*/
+//publishing {
+//    // 定义发布什么
+//    publications {
+//        plugin(MavenPublication) {
+//            groupId = "com.hi.data"
+//            artifactId = 'SensorsAnalyticsPlugin'
+//            version = '1.0.0'
+//            from components.java
+//        }
+//    }
+//    repositories {
+//        maven {
+//            name = 'repo'
+//            url = "../repo"
+//        }
+//    }
+//}
+
+/*发布到私有仓库*/
+//afterEvaluate {
+//    publishing{
+//        publications{
+//            release(MavenPublication){
+//                from components.java
+//                groupId = "com.hi.data"
+//                artifactId = "SensorsAnalyticsPlugin"
+//                version = "1.0.1"
+//            }
+//        }
+//        repositories{
+//            maven{
+//                allowInsecureProtocol true
+//                name = "nexus" //可选
+//                url = "http://127.0.0.1:8081/repository/maven-releases/"
+//                credentials{
+//                    username = "admin"
+//                    password = "1q23456"
+//                }
+//            }
+//        }
+//    }
+//}
+/**
+ *
+ *  https://www.jianshu.com/p/92504554d727
+ *  构建仓库命令
+ *  gradle :viewclick:build
+ *
+ *  发布仓库到本地
+ *  gradle :viewclick:publishPluginPublicationToRepository
+ *
+ */

@@ -2,7 +2,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     //id 'maven-publish'
     /*发布到github*/
-     id 'com.github.dcendents.android-maven'
+    // id 'com.github.dcendents.android-maven'
 }
 
 group = 'com.hi.data'
